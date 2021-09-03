@@ -1,0 +1,237 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  .header {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(152, 181, 214);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .header-logo {
+      width: auto;
+      height: 40px;
+      margin-left: 100px;
+    }
+
+    .header-settings {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 30px;
+      background: none;
+      border: none;
+
+      .header-settings-gear {
+        $icon_size: 1em;
+
+        display: inline-block;
+        position: relative;
+        margin: $icon_size/5;
+        width: $icon_size;
+        height: $icon_size;
+        background: gray;
+        border-radius: 50%;
+        border: $icon_size/3.5 solid gray;
+        box-sizing: border-box;
+
+        &:before,
+        &:after {
+          content: "×";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-family: "times new roman";
+          font-weight: bold;
+          font-size: $icon_size * 2.5;
+          color: gray;
+        }
+
+        &:after {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+      }
+
+      .header-settings-text {
+        color: gray;
+      }
+    }
+  }
+
+  .main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .main-form {
+      width: 600px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      margin-top: 50px;
+      .main-form-top {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        background-color: rgb(88, 179, 111);
+        height: 20px;
+        border: 1px solid black;
+
+        .main-form-top-text {
+          margin: 20px;
+          font-size: 20px;
+        }
+      }
+
+      .main-form-body {
+        width: calc(100% - 2px);
+        height: calc(100% - 20px);
+        display: flex;
+        flex-direction: column;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: rgb(88, 179, 111);
+        border: 1px solid black;
+        border-top: none;
+
+        .main-form-body-subject {
+          margin: 10px;
+          height: 25px;
+        }
+
+        .main-form-body-note {
+          margin: 10px;
+          height: 150px;
+        }
+
+        .main-form-body-button {
+          margin: auto;
+          width: 100px;
+          height: 30px;
+          display: inline-block;
+          font-family: arial, sans-serif;
+          font-size: 15px;
+          font-weight: bold;
+          color: rgb(68, 68, 68);
+          text-decoration: none;
+          user-select: none;
+          padding: 0.2em 1.2em;
+          outline: none;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          border-radius: 2px;
+          background: rgb(245, 245, 245) linear-gradient(#f4f4f4, #f1f1f1);
+          transition: all 0.218s ease 0s;
+        }
+        :hover {
+          color: rgb(24, 24, 24);
+          border: 1px solid rgb(198, 198, 198);
+          background: #f7f7f7 linear-gradient(#f7f7f7, #f1f1f1);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        :active {
+          color: rgb(51, 51, 51);
+          border: 1px solid rgb(204, 204, 204);
+          background: rgb(238, 238, 238)
+            linear-gradient(rgb(238, 238, 238), rgb(224, 224, 224));
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+        }
+      }
+    }
+
+    .main-content {
+      width: calc(100% - 20px);
+      height: auto;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      margin: 50px 20px 20px 20px;
+      .main-content-note {
+        width: 250px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(158, 149, 149);
+        border-radius: 20px;
+
+        .main-content-note-top {
+          display: flex;
+          height: 30px;
+          border-top-left-radius: 20px;
+          border-top-right-radius: 20px;
+
+          border: 1px solid black;
+          align-items: center;
+
+          .main-content-note-top-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-left: 15px;
+            font-size: 15px;
+          }
+        }
+
+        .main-content-note-notediv {
+          height: 240px;
+          display: flex;
+          width: auto;
+          flex-direction: column;
+          border-left: 1px solid black;
+          border-right: 1px solid black;
+
+          .main-content-note-notediv-text {
+            display: flex;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: 10px;
+          }
+
+          .main-content-note-notediv-data {
+            margin-top: auto;
+            margin-left: auto;
+            padding: 10px;
+          }
+        }
+
+        .main-content-note-bot {
+          border-bottom-left-radius: 20px;
+          border-bottom-right-radius: 20px;
+          height: 30px;
+          //background-color: red;
+          margin-top: auto;
+          border: 1px solid black;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .main-content-note-bot-button1 {
+            margin-left: auto;
+            margin-right: 20px;
+          }
+          .main-content-note-bot-button1:before {
+            content: url(https://icons.iconarchive.com/icons/limav/flat-gradient-social/24/Twitter-icon.png);
+          }
+
+          .main-content-note-bot-button2 {
+            margin-right: 20px;
+          }
+          .main-content-note-bot-button2::before {
+            content: url(https://icons.iconarchive.com/icons/danleech/simple/24/facebook-icon.png);
+          }
+          .main-content-note-bot-button3 {
+            margin-right: 20px;
+          }
+
+          .main-content-note-bot-button3::before {
+            content: url(https://icons.iconarchive.com/icons/yootheme/social-bookmark/24/social-linkedin-box-white-icon.png);
+          }
+        }
+      }
+    }
+  }
+}
